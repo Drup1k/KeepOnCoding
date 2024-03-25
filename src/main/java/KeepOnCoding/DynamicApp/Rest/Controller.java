@@ -23,14 +23,16 @@ public class Controller {
 
     // expose a new endpoint for main page
     @GetMapping("/")
-    public  String sayHello() {
+    public String sayHello() {
 
         return "This will be my main page from main method in my Dynamic Application!!!";
     }
+
     // expose a new endpoint for "Leg day"
     @GetMapping("/leg-day")
     public String dontSkipLeg() {
         return "Don't you ever dare to skip leg day!!";
     }
+
 
 }
