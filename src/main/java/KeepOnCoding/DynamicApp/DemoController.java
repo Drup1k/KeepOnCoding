@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
     // Define a private field for the dependency
-
     private Coach myCoach;
+    private Coach anotherCoach;
 
     // Define a constructor for dependency (constructor injection)
     //    @Autowired // @Autowired annotation tells Spring to inject a dependency
@@ -20,10 +20,18 @@ public class DemoController {
     //    }
 
     @Autowired
-    public DemoController(@Qualifier("cricketCoach") Coach myCoach) {
+    public DemoController(@Qualifier("cricketCoach") Coach myCoach,
+                          @Qualifier("cricketCoach") Coach theAnotherCoach) {
         System.out.println("In constructor: " + getClass().getSimpleName());
         this.myCoach = myCoach;
+        anotherCoach = theAnotherCoach;
     }
+
+    @GetMapping("/check")
+    public String check() {
+        return "Comparing beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);
+    }
+
 
     @GetMapping("/daily-workout")
     public String getDailyWorkout() {
