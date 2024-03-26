@@ -8,4 +8,8 @@ public class BoksCoach implements Coach {
     public String getDailyWorkout() {
         return "Plan your box session on tuesday.";
     }
+
+    public BoksCoach() {
+        System.out.println("In constructor: " + getClass().getSimpleName());
+    }
 }
