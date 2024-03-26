@@ -1,5 +1,6 @@
-package KeepOnCoding.DynamicApp;
+package KeepOnCoding.DynamicApp.common;
 
+import KeepOnCoding.DynamicApp.common.Coach;
 import org.springframework.stereotype.Component;
 
 @Component // @Component annotation marks the class as a Spring Bean
